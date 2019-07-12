@@ -1,0 +1,18 @@
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:10022           0.0.0.0:*               LISTEN      11141/ts3server 
+tcp        0      0 0.0.0.0:2022            0.0.0.0:*               LISTEN      8072/node       
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      7891/nginx -g daemo
+tcp        0      0 0.0.0.0:8080            0.0.0.0:*               LISTEN      8072/node       
+tcp        0      0 0.0.0.0:30033           0.0.0.0:*               LISTEN      11141/ts3server 
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN      7891/nginx -g daemo
+tcp        0      0 0.0.0.0:10011           0.0.0.0:*               LISTEN      11141/ts3server 
+tcp6       0      0 :::10022                :::*                    LISTEN      11141/ts3server 
+tcp6       0      0 :::3306                 :::*                    LISTEN      11706/mysqld    
+tcp6       0      0 :::80                   :::*                    LISTEN      7891/nginx -g daemo
+tcp6       0      0 :::30033                :::*                    LISTEN      11141/ts3server 
+tcp6       0      0 :::3000                 :::*                    LISTEN      23217/server.js 
+tcp6       0      0 :::443                  :::*                    LISTEN      7891/nginx -g daemo
+tcp6       0      0 :::10011                :::*                    LISTEN      11141/ts3server 
+udp        0      0 0.0.0.0:9987            0.0.0.0:*                           11141/ts3server 
+udp6       0      0 :::9987                 :::*                                11141/ts3server 

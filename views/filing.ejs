@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Filing</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/simplebar@latest/dist/simplebar.css"
+    />
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <link rel="stylesheet" href="/static/css/styles.763f1700.css" />
+  </head>
+  <body>
+    <div class="navbar navbar-default mb-0 fixed_nav" role="navigation">
+      <div class="container-fluid limited">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">FilingFindings™</a>
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#navbar-collapse"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span><span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div
+          class="collapse navbar-collapse anonymous-navbar-collapse"
+          id="navbar-collapse"
+        >
+          <div
+            id="entity-search-form-container"
+            data-style-variant="navbar"
+            data-initial-value=""
+            data-autofocus="true"
+          >
+            <form
+              class=" navbar-form focus"
+              action="/result"
+              method="get"
+              spellcheck="false"
+              role="search"
+            >
+              <div class="input-group">
+                <input
+                  type="search"
+                  class="form-control search-autocomplete"
+                  name="ticker"
+                  size="40"
+                  placeholder="Ticker or company name"
+                  autocomplete="off"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  autofocus=""
+                /><span class="input-group-btn"
+                  ><button class="btn btn-default" type="submit">
+                    <img
+                      src="./static/images/icons/red-5.png"
+                      style="width:18px;height:18px;padding:0;margin:0;"
+                    /></button
+                ></span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="filing_main">
+      <section class="settings">
+        <div class="settings_item">
+          <button id="back" class="btn btn-default">
+            <i class="fas fa-chevron-left"></i> BACK
+          </button>
+        </div>
+
+        <div class="settings_item">
+          <div class="form-group">
+            <label for="select">SELECT</label>
+            <select class="form-control" id="select">
+              <option value="pnn">Positive/Negative/Neutral</option>
+              <option value="important">Important</option>
+              <option value="positive">Positive Only</option>
+              <option value="negative">Negative Only</option>
+              <option value="neutral">Neutral Only</option>
+              <option value="hidden">Hidden</option>
+              <option value="redflags">Red Flags</option>
+              <option value="unusualactivity">Unusual Activity</option>
+              <option value="significantchanges">Significant Changes</option>
+              <option disabled="disabled">──────────────────</option>
+              <option value="industrycomparisons">Industry Comparisons</option>
+              <option value="companystructure">Company Structure</option>
+              <option value="keystats">Key Stats</option>
+              <option value="trends">Trends</option>
+              <option value="ratios">Ratios</option>
+              <option value="forecasts">Forecasts</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="settings_item">
+          <div class="checkbox checkbox-primary">
+            <input
+              class="display_control"
+              id="findings"
+              type="checkbox"
+              checked
+            />
+            <label for="findings">Display Findings</label>
+          </div>
+
+          <div class="checkbox checkbox-primary">
+            <input
+              class="display_control"
+              id="annotations"
+              type="checkbox"
+              checked
+            />
+            <label for="annotations">Display Annotations</label>
+          </div>
+
+          <div class="checkbox checkbox-primary">
+            <input
+              class="display_control"
+              id="Underline"
+              type="checkbox"
+              checked
+            />
+            <label for="Underline">Underline/Box Text</label>
+          </div>
+        </div>
+
+        <button class="settingsBtn btn btn-lg">
+          <i id="toggler" class="fas fa-chevron-up"></i>
+        </button>
+      </section>
+
+      <section class="filing">
+        <div class="left_panel">
+          <div class="left_panel_item important_div d-none">
+            <p>Important</p>
+          </div>
+          <div class="left_panel_item positive_div">
+            <p>Positive</p>
+          </div>
+          <div class="left_panel_item negative_div">
+            <p>Negative</p>
+          </div>
+          <div class="left_panel_item neutral_div">
+            <p>Neutral</p>
+          </div>
+          <div class="left_panel_item hidden_div d-none">
+            <p>Hidden</p>
+          </div>
+          <div class="left_panel_item redflags_div d-none">
+            <p>Red Flags</p>
+          </div>
+          <div class="left_panel_item unusualactivity_div d-none">
+            <p>Unusual Activity</p>
+          </div>
+          <div class="left_panel_item significantchanges_div d-none">
+            <p>Significant Changes</p>
+          </div>
+          <div class="left_panel_item industrycomparisons_div d-none">
+            <p>Industry Comparisons</p>
+          </div>
+          <div class="left_panel_item companystructure_div d-none">
+            <p>Company Structure</p>
+          </div>
+          <div class="left_panel_item keystats_div d-none">
+            <p>Key Stats</p>
+          </div>
+          <div class="left_panel_item trends_div d-none">
+            <p>Trends</p>
+          </div>
+          <div class="left_panel_item ratios_div d-none">
+            <p>Ratios</p>
+          </div>
+          <div class="left_panel_item forecasts_div d-none">
+            <p>Forecasts</p>
+          </div>
+        </div>
+
+        <div class="content"><%- body %></div>
+
+        <div class="right_panel"></div>
+      </section>
+    </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      console.log("${filing_date}");
+    </script>
+    <script src="/filing.js"></script>
+  </body>
+</html>
